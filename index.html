@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyes Something...</title>
+    <style>
+        /* Base Styling & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        :root {
+            --bg-color: #fafafa;
+            --card-bg: #ffffff;
+            --text-main: #111111;
+            --text-muted: #737373;
+            --accent: #0095f6; /* Instagram Blue accent */
+            --border: #dbdbdb;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding-bottom: 5rem;
+        }
+
+        /* Minimal Header & Placeholder Logo */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-radius: 6px;
+        }
+
+        /* Large Title Section */
+        .title-section {
+            max-width: 935px;
+            margin: 3rem auto 2rem auto;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+
+        .title-section h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            text-transform: capitalize;
+        }
+
+        .title-section p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* 3x3 Responsive Gallery Grid */
+        .gallery-container {
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem; /* Standard web spacing */
+        }
+
+        /* Grid Item & Hover Animations */
+        .grid-item {
+            position: relative;
+            aspect-ratio: 1 / 1; /* Keeps cards perfectly square */
+            background-color: #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Placeholder block visuals */
+        .grid-item::before {
+            content: "View Instagram Post";
+            position: absolute;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0;
+            z-index: 2;
+            transition: opacity 0.2s ease;
+        }
+
+        /* Shimmer gradient effect for placeholder photos */
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
+            transition: filter 0.3s ease;
+        }
+
+        /* Specific gradient subtle variations so cards look unique */
+        .grid-item:nth-child(2n) .photo-placeholder { background: linear-gradient(135deg, #cbd5e1, #94a3b8); }
+        .grid-item:nth-child(3n) .photo-placeholder { background: linear-gradient(225deg, #e2e8f0, #94a3b8); }
+
+        /* Interactive Hover states for Computers */
+        @media (hover: hover) {
+            .grid-item:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            }
+            .grid-item:hover::before {
+                opacity: 1;
+            }
+            .grid-item:hover .photo-placeholder {
+                filter: brightness(0.7) blur(2px);
+            }
+        }
+
+        /* Mobile Breakpoints (The Magic) */
+        @media (max-width: 768px) {
+            .title-section {
+                margin: 2rem auto 1.5rem auto;
+            }
+            .title-section h1 {
+                font-size: 1.75rem;
+            }
+            .grid {
+                grid-template-columns: 1fr; /* Stacks vertically into 1 column on phones */
+                gap: 1rem; /* Tighter spacing for smaller mobile screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation / Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-placeholder">
+                <div class="logo-icon"></div>
+                <span>BrandLogo</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Heading Banner -->
+    <section class="title-section">
+        <h1>eyes something ...</h1>
+        <p>Click any feature card below to view our portfolio collections directly on Instagram.</p>
+    </section>
+
+    <!-- Interactive 3x3 Photo Grid -->
+    <main class="gallery-container">
+        <div class="grid">
+            <!-- Row 1 -->
+            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
+                <div class="photo-placeholder"></div>
+            </a>
+            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
+                <div class="photo-placeholder"></div>
+            </a>
+            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
+                <div class="photo-placeholder"></div>
+            </a>
+            
+            <!-- Row 2 -->
+            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
+                <div class="photo-placeholder"></div>
+            </a>
+            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
+                <div class="photo-placeholder"></div>
+            </a>
+            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
+                <div class="photo-placeholder"></div>
+            </a>
+            
+            <!-- Row 3 -->
+            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
+                <div class="photo-placeholder"></div>
+            </a>
+            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
+                <div class="photo-placeholder"></div>
+            </a>
+            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
+                <div class="photo-placeholder"></div>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
