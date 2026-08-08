@@ -112,7 +112,7 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        /* Placeholder block visuals */
+        /* Hover text overlay setup */
         .grid-item::before {
             content: "View Instagram Post";
             position: absolute;
@@ -124,19 +124,15 @@
             transition: opacity 0.2s ease;
         }
 
-        /* Shimmer gradient effect for placeholder photos */
-        .photo-placeholder {
+        /* Image styling to handle sizing */
+        .grid-item img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
+            object-fit: cover; /* Stops the images stretching out of proportion */
             transition: filter 0.3s ease;
         }
 
-        /* Specific gradient subtle variations so cards look unique */
-        .grid-item:nth-child(2n) .photo-placeholder { background: linear-gradient(135deg, #cbd5e1, #94a3b8); }
-        .grid-item:nth-child(3n) .photo-placeholder { background: linear-gradient(225deg, #e2e8f0, #94a3b8); }
-
-        /* Interactive Hover states for Computers */
+        /* Interactive Hover states for Desktop Screens */
         @media (hover: hover) {
             .grid-item:hover {
                 transform: translateY(-4px);
@@ -145,12 +141,12 @@
             .grid-item:hover::before {
                 opacity: 1;
             }
-            .grid-item:hover .photo-placeholder {
+            .grid-item:hover img {
                 filter: brightness(0.7) blur(2px);
             }
         }
 
-        /* Mobile Breakpoints (The Magic) */
+        /* Mobile Breakpoints */
         @media (max-width: 768px) {
             .title-section {
                 margin: 2rem auto 1.5rem auto;
@@ -187,36 +183,36 @@
     <main class="gallery-container">
         <div class="grid">
             <!-- Row 1 -->
-            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
-                <div class="photo-placeholder"></div>
+            <a href="https://instagram.com" target="_blank" class="grid-item">
+                <img src="images/PictureA.png" alt="Portfolio Image A">
             </a>
-            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
-                <div class="photo-placeholder"></div>
+            <a href="https://instagram.com" target="_blank" class="grid-item">
+                <img src="images/pictureB.png" alt="Portfolio Image B">
             </a>
-            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
-                <div class="photo-placeholder"></div>
+            <a href="https://instagram.com" target="_blank" class="grid-item">
+                <img src="images/PictureC.png" alt="Portfolio Image C">
             </a>
             
             <!-- Row 2 -->
-            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
-                <div class="photo-placeholder"></div>
+            <a href="https://instagram.com" target="_blank" class="grid-item">
+                <img src="images/PictureD.png" alt="Portfolio Image D">
             </a>
-            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
-                <div class="photo-placeholder"></div>
+            <a href="https://instagram.com" target="_blank" class="grid-item">
+                <img src="images/PictureE.png" alt="Portfolio Image E">
             </a>
-            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
-                <div class="photo-placeholder"></div>
+            <a href="https://instagram.com" target="_blank" class="grid-item">
+                <img src="images/PictureF.png" alt="Portfolio Image F">
             </a>
             
             <!-- Row 3 -->
-            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
-                <div class="photo-placeholder"></div>
+            <a href="https://instagram.com" target="_blank" class="grid-item">
+                <img src="images/PictureG.png" alt="Portfolio Image G">
             </a>
-            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
-                <div class="photo-placeholder"></div>
+            <a href="https://instagram.com" target="_blank" class="grid-item">
+                <img src="images/PictureH.png" alt="Portfolio Image H">
             </a>
-            <a href="https://www.instagram.com/hunterstreet_tafe/p/DZtYI8HgccX/" target="_blank" class="grid-item">
-                <div class="photo-placeholder"></div>
+            <a href="https://instagram.com" target="_blank" class="grid-item">
+                <img src="images/PictureI.png" alt="Portfolio Image I">
             </a>
         </div>
     </main>
