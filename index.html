@@ -28,10 +28,9 @@
             padding-bottom: 5rem;
         }
 
-        /* Minimal Header & Placeholder Logo */
+        /* Minimal Header  */
         header {
-            background-color: var(--card-bg);
-            border-bottom: 1px solid var(--border);
+            background-color: var(--bg-color); /* Changes header to matching off-white */
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -40,33 +39,25 @@
         .header-container {
             max-width: 935px;
             margin: 0 auto;
-            padding: 1rem 1.5rem;
+            padding: 0 1.5rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
-        .logo-placeholder {
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        /* Controls logo size and removes the white box */
+        header img {
+            width: 240px;         /* Change this number to manually resize your logo */
+            height: 60px;        /* Keep width and height matching for a square */
+            object-fit: contain; /* Prevents your graphic from warping or stretching */
+            mix-blend-mode: multiply; /* Erases the logo's solid white background box */
         }
 
-        .logo-icon {
-            width: 28px;
-            height: 28px;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            border-radius: 6px;
-        }
 
         /* Large Title Section */
         .title-section {
             max-width: 935px;
-            margin: 3rem auto 2rem auto;
+            margin: -1rem auto 2rem auto;
             padding: 0 1.5rem;
             text-align: center;
         }
@@ -169,7 +160,6 @@
             <!-- Clicking the logo will now refresh or return users to your homepage -->
             <a href="index.html" class="logo-link">
                 <img src="images/eyes-logo.png" alt="Eyes Something Logo" class="logo-img">
-                <span>Eyes Something</span>
             </a>
         </div>
     </header>
